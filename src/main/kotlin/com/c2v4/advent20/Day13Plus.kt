@@ -11,7 +11,7 @@ fun shuttle2(input: String) =
               .filter { id -> id.value != "x" }
               .map { it.value.toLong() - it.index to it.value.toLong() }
               .toList()
-        }
+        } //chinese remainder theorem
         .let { list ->
           val commonModulo = list.map { it.second }.fold(1L, { acc, i -> acc * i })
           list.map { (a, m) -> val b = commonModulo / m

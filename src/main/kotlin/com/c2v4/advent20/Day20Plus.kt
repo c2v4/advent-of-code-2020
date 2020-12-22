@@ -14,7 +14,7 @@ fun jigsaw2(input: String) =
         .let { tiles ->
           // find correct orientation and position
           val notPositionedYet = tiles.drop(1).toMutableSet()
-            val gridSize = tiles.size*4 + 1
+            val gridSize = tiles.size*2 + 1
             val completeGrid: Array<Array<Tile?>> = Array(gridSize) { Array(gridSize) { null } }
           completeGrid[tiles.size][tiles.size] = tiles.first()
           val awaitingSides =

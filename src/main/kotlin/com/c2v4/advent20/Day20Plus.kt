@@ -127,8 +127,6 @@ private data class Point2(val x: Int, val y: Int)
 
 private operator fun Point2.plus(other: Point2) = Point2(this.x + other.x, this.y + other.y)
 
-fun List<Boolean>.withFlipped() = listOf(this, this.reversed())
-
 private fun Tile.getBorders() =
     mapOf(
         Side.TOP to grid.first(),
@@ -153,14 +151,14 @@ private enum class Side(x: Int, y: Int) {
       }
 }
 
-val TRANSPOSE: Transformer =
+private val TRANSPOSE: Transformer =
     { tile -> Tile(tile.id, tile.grid.indices.map { i -> tile.grid.map { it[i] } }) }
 
-val FLIP: Transformer = { tile -> Tile(tile.id, tile.grid.map { it.reversed() }) }
+private val FLIP: Transformer = { tile -> Tile(tile.id, tile.grid.map { it.reversed() }) }
 
-val ROTATE: Transformer = TRANSPOSE + FLIP
+private val ROTATE: Transformer = TRANSPOSE + FLIP
 
-val ALL_COMBINATION_TRANSFORMERS =
+private val ALL_COMBINATION_TRANSFORMERS =
     setOf(
         { it },
         ROTATE,
@@ -171,9 +169,9 @@ val ALL_COMBINATION_TRANSFORMERS =
         FLIP + ROTATE + ROTATE,
         FLIP + ROTATE + ROTATE + ROTATE)
 
-typealias Transformer = (Tile) -> Tile
+private typealias Transformer = (Tile) -> Tile
 
-operator fun Transformer.plus(other: Transformer) = { tile: Tile -> other(this(tile)) }
+private operator fun Transformer.plus(other: Transformer) = { tile: Tile -> other(this(tile)) }
 
 fun main(args: Array<String>) {
   println(jigsaw2("day20.txt".asResource()))

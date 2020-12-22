@@ -1,7 +1,7 @@
 package com.c2v4.advent20
 
 fun encoding2(input: String, preambleSize: Int = 25) =
-    input.split(splitRegex).map { it.toLong() }.let { list ->
+    input.split(EOL).map { it.toLong() }.let { list ->
       val missing =
           list.windowed(preambleSize + 1, 1)
               .find {

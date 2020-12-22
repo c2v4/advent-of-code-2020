@@ -1,6 +1,6 @@
 package com.c2v4.advent20
 
-fun reportRepair(input: String) = input.split(splitRegex)
+fun reportRepair(input: String) = input.split(EOL)
         .map { it.toInt() }
         .fold(mutableSetOf<Int>(), { acc, i ->  if(acc.contains(i)){
           return i*(2020-i)

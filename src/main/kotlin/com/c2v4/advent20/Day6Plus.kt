@@ -6,7 +6,7 @@ fun customs2(input: String) =
     input
         .split(Regex("\\r?\\n\\r?\\n"))
         .map { s ->
-          s.split(splitRegex).map { string -> string.toCharArray().toSet() }.reduceRight {
+          s.split(EOL).map { string -> string.toCharArray().toSet() }.reduceRight {
           set,
           acc ->
             Sets.intersection(set, acc)

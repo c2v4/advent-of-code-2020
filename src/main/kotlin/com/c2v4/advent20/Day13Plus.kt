@@ -2,7 +2,7 @@ package com.c2v4.advent20
 
 fun shuttle2(input: String) =
     input
-        .split(splitRegex)
+        .split(EOL)
         .let { list ->
           list[1]
               .split(",")

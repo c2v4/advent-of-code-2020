@@ -3,7 +3,7 @@ package com.c2v4.advent20
 import java.lang.IllegalStateException
 
 fun ticket2(input: String, allFieldsStartingWith: String = "") =
-    createTicketUniverse(input.split(Regex("\\r?\\n\\r?\\n")).map { it.split(splitRegex) })
+    createTicketUniverse(input.split(Regex("\\r?\\n\\r?\\n")).map { it.split(EOL) })
         .let { universe ->
           universe.copy(
               nearbyTickets =

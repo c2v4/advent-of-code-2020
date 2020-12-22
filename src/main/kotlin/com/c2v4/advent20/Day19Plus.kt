@@ -1,7 +1,7 @@
 package com.c2v4.advent20
 
 fun monster2(input: String) =
-    input.split(Regex("\\r?\\n\\r?\\n")).map { it.split(splitRegex) }.let { sections ->
+    input.split(Regex("\\r?\\n\\r?\\n")).map { it.split(EOL) }.let { sections ->
       val rawInputRules =
           sections[0]
               .map {

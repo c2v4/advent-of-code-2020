@@ -4,7 +4,7 @@ import java.lang.IllegalStateException
 
 fun operation(input: String): Long {
   val whitespaceRegex = Regex("\\s")
-  return input.split(splitRegex).map { line -> calculate(line.split(whitespaceRegex)) }.sum()
+  return input.split(EOL).map { line -> calculate(line.split(whitespaceRegex)) }.sum()
 }
 
 private val ADDITION = { i: Long, j: Long -> i + j }

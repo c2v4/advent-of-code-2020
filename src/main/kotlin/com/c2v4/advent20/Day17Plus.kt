@@ -2,7 +2,7 @@ package com.c2v4.advent20
 
 fun conway2(input: String, cycles: Int) =
     input
-        .split(splitRegex)
+        .split(EOL)
         .mapIndexed { y, s ->
           s.mapIndexed { x, c -> if (c == '#') Point4(x, y, 0, 0) else null }.filterNotNull()
         }

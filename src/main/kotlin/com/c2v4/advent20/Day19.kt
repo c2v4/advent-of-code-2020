@@ -4,7 +4,7 @@ import arrow.syntax.function.memoize
 import com.google.common.collect.Sets
 
 fun monster(input: String) =
-    input.split(Regex("\\r?\\n\\r?\\n")).map { it.split(splitRegex) }.let { sections ->
+    input.split(Regex("\\r?\\n\\r?\\n")).map { it.split(EOL) }.let { sections ->
       val correctStrings =
           getRuleCalculatingFunction(
               sections[0]

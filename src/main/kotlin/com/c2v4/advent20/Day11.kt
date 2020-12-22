@@ -3,7 +3,7 @@ package com.c2v4.advent20
 import java.lang.IllegalArgumentException
 
 fun seating(input: String) =
-    input.split(splitRegex).let { list ->
+    input.split(EOL).let { list ->
       val grid =
           Array(list.size) { y ->
             Array(list[y].length) { x ->

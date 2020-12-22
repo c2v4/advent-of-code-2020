@@ -16,7 +16,7 @@ fun binary(input: String) =
         .max()
 
 fun toSequenceOfSeats(input: String) = input
-    .split(splitRegex)
+    .split(EOL)
     .asSequence()
     .map { toBinary(it) }
 

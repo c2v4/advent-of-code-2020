@@ -5,7 +5,7 @@ import java.lang.IllegalArgumentException
 
 fun docking2(input: String) =
     input
-        .split(splitRegex)
+        .split(EOL)
         .fold("" to mutableMapOf<Long, Long>()) { acc, s ->
           when {
             s.startsWith("mask") -> s.substringAfter("= ") to acc.second

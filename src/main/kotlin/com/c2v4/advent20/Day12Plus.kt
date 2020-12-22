@@ -5,7 +5,7 @@ import kotlin.math.abs
 
 fun rain2(input: String) =
     input
-        .split(splitRegex)
+        .split(EOL)
         .fold((0 to 0) to (10 to 1)) { (ship, waypoint), s ->
           val key = s.first()
           val value = s.drop(1).toInt()

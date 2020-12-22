@@ -1,7 +1,7 @@
 package com.c2v4.advent20
 
 fun jolt(input: String) =
-    input.split(splitRegex).map{it.toInt()}.sorted().fold((0 to 1) to 0)
+    input.split(EOL).map{it.toInt()}.sorted().fold((0 to 1) to 0)
     {(jumps,previous), i ->
         val jump = i-previous
         val newJumps = when (jump){

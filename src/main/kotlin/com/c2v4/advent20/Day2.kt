@@ -1,7 +1,7 @@
 package com.c2v4.advent20
 
 
-fun password(input: String) = input.split(splitRegex)
+fun password(input: String) = input.split(EOL)
     .map { it.split(" ") }
     .count { val split = it[0].split("-")
         val intRange = split[0].toInt()..split[1].toInt()

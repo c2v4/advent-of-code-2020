@@ -1,7 +1,7 @@
 package com.c2v4.advent20
 
 fun reportRepair2(input: String): Int =
-    input.split(splitRegex).map { it.toInt() }.sorted().let {
+    input.split(EOL).map { it.toInt() }.sorted().let {
       var i = 0
       var j = 1
       var k = it.size - 1

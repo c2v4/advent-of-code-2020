@@ -7,7 +7,7 @@ fun haversacks(input: String) = countNext(createBagGraph(input), "shiny gold").s
 
 fun createBagGraph(input: String): ValueGraph<String, Int> =
     input
-        .split(splitRegex)
+        .split(EOL)
         .map { s ->
           val split = s.split(Regex(" bags? contain "))
           split[0] to split[1].split(", ")

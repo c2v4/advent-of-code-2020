@@ -2,7 +2,7 @@ package com.c2v4.advent20
 
 fun handheld(input: String) =
     input
-        .split(splitRegex)
+        .split(EOL)
         .map {
           val split = it.split(" ")
           split[0] to split[1]

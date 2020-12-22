@@ -5,7 +5,7 @@ import kotlin.math.abs
 
 fun rain(input: String) =
     input
-        .split(splitRegex)
+        .split(EOL)
         .foldRight((0 to 0) to Direction.EAST) { s, (position, direction) ->
           val key = s.first()
           val value = s.drop(1).toInt()

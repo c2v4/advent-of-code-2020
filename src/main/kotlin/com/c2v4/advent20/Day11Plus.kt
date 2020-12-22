@@ -3,7 +3,7 @@ package com.c2v4.advent20
 import java.lang.IllegalArgumentException
 
 fun seating2(input: String) =
-    input.split(splitRegex).let { list ->
+    input.split(EOL).let { list ->
       val grid = extractInitialGrid(list)
       generateSequence(Array(0) { Array(0) { SeatState.FLOOR } } to grid) { grids ->
         grids.second to stepGrid(grids.second)

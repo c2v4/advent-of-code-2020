@@ -1,7 +1,7 @@
 package com.c2v4.advent20
 
 
-fun trajectory(input: String) = input.split(splitRegex)
+fun trajectory(input: String) = input.split(EOL)
     .foldIndexed(0){index, acc, s ->
         val i = (index*3)%s.length
         if(s[i]=='#') acc+1 else acc

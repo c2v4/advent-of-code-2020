@@ -1,14 +1,14 @@
 package com.c2v4.advent20
 
-fun ticket(input: String) =
-    createTicketUniverse(input.split(Regex("\\r?\\n\\r?\\n")).map { it.split(splitRegex) }).let {
-    universe ->
-      universe
-          .nearbyTickets
-          .flatten()
-          .filter { value -> universe.rules.values.flatten().none { value in it } }
-          .sum()
+fun ticket(input: String): Int {
+    return createTicketUniverse(input.split(PARAGRAPH).map { it.split(EOL) }).let { universe ->
+        universe
+            .nearbyTickets
+            .flatten()
+            .filter { value -> universe.rules.values.flatten().none { value in it } }
+            .sum()
     }
+}
 
 fun createTicketUniverse(ticketInput: List<List<String>>) =
     TicketUniverse(

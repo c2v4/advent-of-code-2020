@@ -5,7 +5,7 @@ import java.lang.IllegalStateException
 fun operation2(input: String): Long {
   val whitespaceRegex = Regex("\\s")
   return input
-      .split(splitRegex)
+      .split(EOL)
       .map { line -> calculate(line.split(whitespaceRegex)).first().toLong() }
       .sum()
 }

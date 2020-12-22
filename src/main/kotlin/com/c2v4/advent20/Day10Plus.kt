@@ -3,7 +3,7 @@ package com.c2v4.advent20
 import arrow.syntax.function.memoize
 
 fun jolt2(input: String) =
-    input.split(splitRegex).map { it.toInt() }.sorted().let { arrangementsMemoized(it) }
+    input.split(EOL).map { it.toInt() }.sorted().let { arrangementsMemoized(it) }
 
 val arrangementsMemoized =
     { list: List<Int> ->

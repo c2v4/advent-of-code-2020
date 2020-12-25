@@ -123,9 +123,9 @@ private fun Tile.combinations() = ALL_COMBINATION_TRANSFORMERS.map { it(this) }
 
 private data class FreeSpot(val position: Point2, val fixed: Map<Side, List<Boolean>>)
 
-private data class Point2(val x: Int, val y: Int)
+data class Point2(val x: Int, val y: Int)
 
-private operator fun Point2.plus(other: Point2) = Point2(this.x + other.x, this.y + other.y)
+operator fun Point2.plus(other: Point2) = Point2(this.x + other.x, this.y + other.y)
 
 private fun Tile.getBorders() =
     mapOf(
